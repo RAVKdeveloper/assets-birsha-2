@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+@import './founts/founts.css';
+
+@import './reset/reset.css';
+
+
+
+html,body{
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+img{
+    user-select: none;
+}
+
+/* Variable */
+
+:root{
+
+    /* Text vars */
+
+   --color-text: #000;
+   --color-accent: #f7a600;
+   --colortext-main: #121214;
+   --links-color: #d6850d;
+
+   /* Header vars */
+
+   --blackback: #17181e;
+   --header-text: #fff;
+   --backg-li: #191a1c;
+
+   /* Main */
+
+   --back-main: #f5f7fa;
+   --back-white: #fff;
+   --noactive-color: #81858c;
+   --back-btn: #f3f5f7;
+   --green-action: #20b26c; 
+}
