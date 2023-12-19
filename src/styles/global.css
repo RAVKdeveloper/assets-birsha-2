@@ -8,6 +8,7 @@
 
 html,body{
     font-family: 'IBM Plex Sans', sans-serif;
+    overflow-x: hidden;
 }
 
 img{
@@ -38,4 +39,5 @@ img{
    --noactive-color: #81858c;
    --back-btn: #f3f5f7;
    --green-action: #20b26c; 
+   --search-back: hsla(0,0%,100%,.08);
 }

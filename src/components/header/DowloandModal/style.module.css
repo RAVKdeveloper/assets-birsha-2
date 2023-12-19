@@ -1,0 +1,51 @@
+.root{
+    position: absolute;
+    right: 0px;
+    top: 24px;
+    padding: 15px;
+    background: var(--backg-li);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    border-radius: 4px;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: all .4s ease;
+}
+
+.root.visible{
+    opacity: 1;
+    pointer-events: all;
+    transition: all .4s ease;
+}
+
+.qrRow{
+    width: 150px;
+    height: 150px;
+    background-color: white;
+    border-radius: 2px;
+}
+
+.text{
+    color: var(--header-text);
+    font-weight: 500;
+}
+
+.btn{
+    width: 100%;
+    background: var(--color-accent);
+    font-size: 12px;
+    font-weight: 800;
+    padding: 10px 5px;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    transition: all .4s ease;
+}
+
+.btn:hover{
+    background: #f3ba48;
+    transition: all .4s ease;
+}

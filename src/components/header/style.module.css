@@ -1,0 +1,164 @@
+.root{
+    background: var(--blackback);
+    /* height: 48px; */
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 16px;
+}
+
+.left{
+    display: flex;
+    align-items: center;
+
+}
+
+.logo{
+    max-width: 56.3px;
+    max-height: 22px;
+}
+
+.navigation ul{
+    padding-left: 46px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.navLink{
+    color: var(--header-text);
+    cursor: pointer;
+    transition: all .4s ease;
+}
+
+.navLink:hover{
+    color: var(--color-accent);
+    transition: all .4s ease;
+}
+
+.searchField{
+    margin-left: 24px;
+    width: 200px;
+    height: 32px;
+    background: var(--search-back);
+    border-radius: 20px;
+    border: 1px solid transparent;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all .3s ease;
+    position: relative;
+}
+
+.searchField:hover{
+    border-color: var(--color-accent);
+    transition: all .3s ease;
+}
+
+.searchIconBox{
+    padding: 6px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconSearch{
+    color: var(--noactive-color);
+    width: 14px;
+    height: 14px;
+}
+
+.searchInput{
+    background: transparent;
+    color: var(--header-text);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.searchInput::placeholder{
+    color: var(--header-text);
+    opacity: 0.6;
+}
+
+.clear{
+    position: absolute;
+    color: var(--noactive-color);
+    cursor: pointer;
+    right: 10px;
+}
+
+
+
+/* Right */
+
+
+.right{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.btnDeposit{
+    width: 82px;
+    height: 32px;
+    background: var(--color-accent);
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--colortext-main);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s ease;
+    user-select: none;
+}
+
+.btnDeposit:hover{
+    background: #ffc35c;
+    transition: all .3s ease;
+}
+
+.linkAssets{
+    color: var(--links-color);
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.linkAssets::after{
+    content: '';
+    position: absolute;
+    background: var(--links-color);
+    width: 140%;
+    height: 1px;
+    bottom: -22px;
+    left: -6px;
+}
+
+.iconAvatar{
+    max-width: 28px;
+    height: 28px;
+    border-radius: 50%;
+}
+
+.hoverElement{
+    position: relative;
+}
+
+.bell{
+    width: 20px;
+    height: 20px;
+    color: var(--header-text);
+    cursor: pointer;
+}
+
+.dowloandImg{
+    max-width: 24px;
+    max-height: 24px;
+    cursor: pointer;
+}

@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import './styles/global.css';
 import RoutesApp from './routes/routes';
+import Header from './components/header/Header';
 
 
 const App: FC = () => {
@@ -8,6 +9,7 @@ const App: FC = () => {
   return (
 
     <div className="App">
+       <Header/>
        <RoutesApp/>
     </div>
   )
