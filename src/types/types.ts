@@ -1,13 +1,18 @@
-export type Test = {
-    cryptoName: string
-    subtitle: string
+export type TradingPar = {
+    allPar: string
+    market: string
     image: string
-    id: string
+    price: string
+    procents: string,
+    obmenAction: string
 }
 
-export type GEtRespones = [{
-    cryptoName: string
-    subtitle: string
+export type GEtResponesTradingPar = [{
+    allPar: string
+    market: string
     image: string
-    id: string
+    price: string
+    procents: string,
+    obmenAction: string
+    _id: string
 }]

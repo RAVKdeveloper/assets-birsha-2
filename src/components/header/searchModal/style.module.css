@@ -1,0 +1,15 @@
+.root{
+    position: absolute;
+    top: 35px;
+    left: 0;
+    width: 500px;
+    height: 400px;
+    background: var(--blackback);
+    border-radius: 8px;
+}
+
+.title{
+    font-weight: 600;
+    color: var(--header-text);
+    margin-top: 30px;
+}

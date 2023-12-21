@@ -11,6 +11,7 @@ import { useAppDispatch, useAppSelector } from '../../Redux/Slices/hooks/hooks';
 import { setSearchVal } from '../../Redux/Slices/HeaderRedusers/searchHeader';
 import AccountHoverHeader from './AccountHover/accHover';
 import DowloandModalHeader from './DowloandModal/dowloand';
+import SearchModal from './searchModal/modal';
 
 
 const Header: FC = () => {
@@ -48,8 +49,9 @@ const Header: FC = () => {
                     <input onChange={changeInputValue} value={searchVal} type="text" className={style.searchInput} placeholder='🔥 INSP' />
                     {
                         searchVal &&
-                    <IoIosCloseCircle className={style.clear} onClick={clearSearchInput} />
+                        <IoIosCloseCircle className={style.clear} onClick={clearSearchInput} />
                     }
+                    <SearchModal/>
                 </div>
              </section>
              <section className={style.right}>
