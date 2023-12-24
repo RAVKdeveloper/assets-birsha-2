@@ -1,0 +1,98 @@
+.root{
+    position: fixed;
+    top: 58px;
+    left: 0;
+    bottom: 0;
+
+    width: 200px;
+    background: var(--back-white);
+    border-right: 1px solid var(--back-btn);
+}
+
+.arrowExitBody{
+    padding: 24px 16px 8px;
+}
+
+.arrowExitBody img{
+    cursor: pointer;
+}
+
+
+.overview{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px;
+    font-weight: 500;
+    color: var(--colortext-main);
+
+    user-select: none;
+    cursor: pointer;
+    transition: all .3s ease;
+    border-left: 3px solid transparent;
+}
+
+.overview.active{
+    background: var(--back-btn);
+    border-left: 3px solid var(--color-accent);
+    transition: all .4s ease;
+}
+
+.overview:hover{
+    background: var(--back-btn);
+    transition: all .3s ease;
+}
+
+.title{
+    padding: 16px 16px 4px;
+    color: var(--noactive-color);
+    font-size: 12px;
+}
+
+.accountList{
+    display: flex;
+    flex-direction: column;
+    padding-top: 3px;
+}
+
+.card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 16px;
+    user-select: none;
+    cursor: pointer;
+    transition: all .3s ease;
+    border-left: 3px solid transparent;
+}
+
+.card.active{
+    background: var(--back-btn);
+    border-left: 3px solid var(--color-accent);
+    transition: all .4s ease;
+}
+
+.info{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    color: var(--colortext-main);
+}
+
+.card:hover{
+    background: var(--back-btn);
+    transition: all .3s ease;
+}
+
+.arrowIcon{
+    max-width: 12px;
+    max-height: 12px;
+    pointer-events: none;
+}
+
+.cardIcon{
+    max-width: 16px;
+    max-height: 16px;
+}

@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { FC, useRef, useState } from 'react'
 import { Port } from '../../assets/env/env';
 import style from './style.module.css'
 import logoImg from '../../assets/img/header/logo.svg'
@@ -19,6 +19,8 @@ const Header: FC = () => {
     const [ openAcc, setOpenAcc ] = useState<boolean>(false)
     const [ openDowloand, setOpenDowloand ] = useState<boolean>(false)
     const { searchVal } = useAppSelector(state => state.searchHeader)
+    const [ isOpen, setIsOpen ] = useState(false)
+    const searchRef = useRef<HTMLInputElement>(null)
     const dispatch = useAppDispatch()
 
     const clearSearchInput = () => dispatch(setSearchVal(''))
@@ -27,6 +29,7 @@ const Header: FC = () => {
     const closeAccModal = () => setOpenAcc(false)
     const openDowModal = () => setOpenDowloand(true)
     const closeDowModal = () => setOpenDowloand(false)
+    const openSearch = () => setIsOpen(true)
  
     return (
 
@@ -44,14 +47,15 @@ const Header: FC = () => {
                         <li className={style.navLink}>Web3</li>
                     </ul>
                 </nav>
-                <div className={style.searchField}>
+                <div onClick={openSearch} className={style.searchField}>
                     <div className={style.searchIconBox}><IoSearch className={style.iconSearch} /></div>
-                    <input onChange={changeInputValue} value={searchVal} type="text" className={style.searchInput} placeholder='🔥 INSP' />
+                    <input ref={searchRef} onChange={changeInputValue} value={searchVal} type="text" className={style.searchInput} placeholder='🔥 INSP' />
                     {
                         searchVal &&
                         <IoIosCloseCircle className={style.clear} onClick={clearSearchInput} />
                     }
-                    <SearchModal/>
+
+                     <SearchModal open={isOpen} setOpen={setIsOpen} referenseTo={searchRef} />
                 </div>
              </section>
              <section className={style.right}>

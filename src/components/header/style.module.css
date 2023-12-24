@@ -7,6 +7,10 @@
     align-items: center;
     justify-content: space-between;
     padding: 13px 16px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 .left{

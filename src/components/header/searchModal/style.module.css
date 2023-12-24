@@ -6,10 +6,85 @@
     height: 400px;
     background: var(--blackback);
     border-radius: 8px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .3s ease;
+    overflow: hidden;
+}
+
+.root.active{
+    opacity: 1;
+    pointer-events: all;
+    transition: all .3s ease;
 }
 
 .title{
     font-weight: 600;
     color: var(--header-text);
     margin-top: 30px;
+    margin-left: 32px;
+}
+
+.container{
+    overflow-y: scroll;
+    padding: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    max-height: 350px;
+}
+
+.container::-webkit-scrollbar{
+    width: 0px;
+}
+
+.card{
+    padding: 15px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.card:hover{
+    background: rgba(106, 106, 106, 0.1);
+    transition: all .3s ease;
+}
+
+.cardInfoRow{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.name{
+    color: var(--header-text);
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.market{
+    color: var(--noactive-color);
+    font-size: 12px;
+}
+
+.cardPriceRow{
+    display: flex;
+    align-items: center;
+    gap: 55px;
+}
+
+.price{
+    color: var(--header-text);
+    font-size: 16px;
+}
+
+.procent{
+    color: var(--green-action);
+    font-weight: 700;
+}
+
+.procent.minus{
+    color: red;
 }

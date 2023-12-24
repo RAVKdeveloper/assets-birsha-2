@@ -1,14 +1,14 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import type { GEtResponesTradingPar, TradingPar } from '../../types/types'
+import type { TradingPar } from '../../types/types'
 
 
 export const searchTradingPar = createApi({
     reducerPath: 'searchTradingPar',
     tagTypes: ['TestCrypto'],
-    baseQuery: fetchBaseQuery({ baseUrl: 'https://654f4fed358230d8f0cd31a4.mockapi.io/ravk/' }),
+    baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:5000/api' }),
     endpoints: (builder) => ({
-      getPar: builder.query<GEtResponesTradingPar, string>({
-        query: () => `cryptolist`,
+      getPar: builder.query<TradingPar[], string>({
+        query: (search) => `/tradingpars${search ? `?allPar=${search}` : ''}`,
       }),
       // addProduct: builder.mutation<TradingPar, Partial<TradingPar>>({
       //   query: (body) => {
