@@ -1,0 +1,10 @@
+.root{
+    padding-top: 98px;
+    background: var(--auth-back);
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+}

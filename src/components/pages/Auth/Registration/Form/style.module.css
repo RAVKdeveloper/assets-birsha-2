@@ -1,0 +1,134 @@
+.root{
+    width: 440px;
+    background: var(--back-white);
+    border: 1px solid var(--back-btn);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.titleRow{
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--back-btn);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.title{
+    font-size: 24px;
+    color: var(--colortext-main);
+    font-weight: 600;
+}
+
+.linkLoginBody{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--color-accent);
+    transition: opacity .3s ease;
+}
+
+.linkLoginBody:hover{
+    opacity: 0.5;
+    transition: opacity .3s ease;
+}
+
+.linkText{
+    font-weight: 700;
+}
+
+/* Form */
+
+.form{
+    padding: 30px 20px 27px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.input{
+    width: 100%;
+    height: 48px;
+    background: var(--back-main);
+    padding: 0 16px;
+    border-radius: 6px;
+    font-size: 16px;
+    color: var(--colortext-main);
+    border: 1px solid transparent;
+}
+
+.termBody{
+    padding-top: 20px;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.checkbox{
+    width: 14px;
+    height: 12px;
+    border: 1px solid #adb1b8;
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.checkbox.check::before{
+    content: '+';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: var(--color-accent);
+    color: var(--header-text);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkboxText{
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--noactive-color);
+}
+
+.checkboxText span{
+    color: var(--links-color);
+    font-weight: 500;
+}
+
+.btn{
+    padding: 12px 0px;
+    background: var(--color-accent);
+    color: var(--colortext-main);
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    user-select: none;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.btn:hover{
+    background: #ffc35c;
+    transition: all .3s ease;
+}
+
+.btn.disabled{
+    opacity: 0.5;
+}
+
+.input.error{
+    border-color: red;
+}
+
+.errorText{
+    color: red;
+    font-size: 14px;
+}

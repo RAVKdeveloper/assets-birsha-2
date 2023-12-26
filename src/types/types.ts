@@ -8,14 +8,14 @@ export type TradingPar = {
     _id: string
 }
 
-export interface UserType {
-    createdAt: string
-    name: string
-    avatar: string
-    password: string
-    active: string
+export type UserTypeMain = {
     nickname: string
-    balance: string
+    email: string
+    password: string
+    _id: string
+    avatar?: string
     verificationName: string
-    id: string
+    createdAt: string
+    updatedAt: string
+    token: string
 }

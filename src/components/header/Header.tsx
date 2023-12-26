@@ -1,4 +1,5 @@
-import { FC, useRef, useState } from 'react'
+import { FC, useEffect, useRef, useState } from 'react'
+import { NavLink } from 'react-router-dom';
 import { Port } from '../../assets/env/env';
 import style from './style.module.css'
 import logoImg from '../../assets/img/header/logo.svg'
@@ -8,6 +9,7 @@ import { IoSearch } from "react-icons/io5";
 import { FaRegBell } from "react-icons/fa";
 import { IoIosCloseCircle } from "react-icons/io";
 import { useAppDispatch, useAppSelector } from '../../Redux/Slices/hooks/hooks';
+import { useAuthMeQuery } from '../../Redux/Api/Auth/authUserApi';
 import { setSearchVal } from '../../Redux/Slices/HeaderRedusers/searchHeader';
 import AccountHoverHeader from './AccountHover/accHover';
 import DowloandModalHeader from './DowloandModal/dowloand';
@@ -16,6 +18,8 @@ import SearchModal from './searchModal/modal';
 
 const Header: FC = () => {
 
+    const token = localStorage.getItem('tokenAuth') ? localStorage.getItem('tokenAuth') : ''
+    const { data, isError } = useAuthMeQuery(token === null ? '' : token)
     const [ openAcc, setOpenAcc ] = useState<boolean>(false)
     const [ openDowloand, setOpenDowloand ] = useState<boolean>(false)
     const { searchVal } = useAppSelector(state => state.searchHeader)
@@ -30,6 +34,7 @@ const Header: FC = () => {
     const openDowModal = () => setOpenDowloand(true)
     const closeDowModal = () => setOpenDowloand(false)
     const openSearch = () => setIsOpen(true)
+
  
     return (
 
@@ -58,6 +63,8 @@ const Header: FC = () => {
                      <SearchModal open={isOpen} setOpen={setIsOpen} referenseTo={searchRef} />
                 </div>
              </section>
+             {
+                !isError ?
              <section className={style.right}>
                 <a href={`http://localhost:${Port}/dashboard`} className={style.btnDeposit}>Deposit</a>
                 <p className={style.linkAssets}>Assets</p>
@@ -75,6 +82,12 @@ const Header: FC = () => {
                     <DowloandModalHeader isVisible={openDowloand} />
                 </div>
              </section>
+              :
+              <section className={style.btnRow}>
+                <NavLink to={'/login'} className={style.login}>Log In</NavLink>
+                <NavLink to={'/registration'} className={style.registration}>Sign Up</NavLink>
+              </section>
+             }
         </header>
     )
 } 

@@ -1,9 +1,8 @@
 import { FC } from 'react'
 import arrowExit from '../../assets/img/Sidebar/arrowExit.svg'
 import overwievIcons from '../../assets/img/Sidebar/icons/overview.svg'
-import arrowImg from '../../assets/img/Sidebar/icons/arrow.svg'
 import { NavLink } from 'react-router-dom'
-import { balanceAccountColumn, investedProducsColumn } from '../../assets/db/SidebarsData'
+import { balanceAccountColumn, investedProducsColumn, analisisColumn } from '../../assets/db/SidebarsData'
 import style from './style.module.css'
 
 
@@ -42,6 +41,21 @@ const Sidebar: FC = () => {
             <ul className={style.accountList}>
                 {
                     investedProducsColumn.map(({ type, id, img, link }) => (
+                        <li key={id}>
+                        <NavLink className={({ isActive }) => isActive ? `${style.card} ${style.active}` : style.card} to={link}>
+                            <div className={style.info}>
+                            <img src={img} alt={type} className={style.cardIcon} />
+                            <p className={style.text}>{type}</p>
+                            </div>
+                        </NavLink>
+                    </li>
+                    ))
+                }
+            </ul>
+            <h3 className={style.title}>Analysis</h3>
+            <ul className={style.accountList}>
+                {
+                    analisisColumn.map(({ id, type, img, link }) => (
                         <li key={id}>
                         <NavLink className={({ isActive }) => isActive ? `${style.card} ${style.active}` : style.card} to={link}>
                             <div className={style.info}>

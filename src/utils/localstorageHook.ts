@@ -8,9 +8,9 @@ export function useLocaleStorage(key: string, action: string, value?: string) {
        if(action === 'get') {
           setLsVal(localStorage.getItem(key))
        } else if(action === 'set' && value) {
-          localStorage.setItem(key, value)
+         localStorage.setItem(key, JSON.stringify(value))
        }
-     }, [])
+     }, [value])
 
      return lsVal
 } 

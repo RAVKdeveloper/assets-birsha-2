@@ -5,6 +5,8 @@ import usdcderivImg from '../img/Sidebar/icons/usdcderivatives.svg';
 import arrow from '../img/Sidebar/icons/arrow.svg'
 import earn from '../img/Sidebar/icons/earn.svg'
 import lending from '../img/Sidebar/icons/lending.svg'
+import tradePerfomens from '../img/Sidebar/icons/tradePerfomens.svg'
+import orders from '../img/Sidebar/icons/orders.svg'
 
 
 
@@ -51,5 +53,20 @@ export const investedProducsColumn = [
         type: 'Lending',
         img: lending,
         link: '/lending'
+    }
+]
+
+export const analisisColumn = [
+    {
+        id: 1,
+        type: 'Trading Performance',
+        img: tradePerfomens,
+        link: '/tradingperfomens',
+    },
+    {
+        id: 2,
+        type: 'Orders',
+        img: orders,
+        link: '/orders',
     }
 ]

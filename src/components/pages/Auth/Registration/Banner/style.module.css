@@ -1,0 +1,25 @@
+.root{
+    background: var(--back-white);
+    padding: 40px;
+    max-width: 400px;
+    border-radius: 8px;
+}
+
+.title{
+    color: var(--color-accent);
+    padding-bottom: 32px;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.text{
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 500;
+    color: var(--colortext-main);
+    padding-bottom: 32px;
+}
+
+.text span{
+    color: var(--color-accent);
+}
