@@ -15,6 +15,7 @@ interface LogData {
 
 export const authUserApi = createApi({
     reducerPath: 'authUserApi',
+    tagTypes: ['UserAuth'],
     baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:5000/api/auth' }),
     endpoints: (builder) => ({
         Registration: builder.mutation<UserTypeMain, Partial<RegData>>({
@@ -49,6 +50,6 @@ export const authUserApi = createApi({
     })
 })
 
-export const { useRegistrationMutation, useLoginMutation, useAuthMeQuery } = authUserApi
+export const { useRegistrationMutation, useLoginMutation, useAuthMeQuery, useLazyAuthMeQuery } = authUserApi
 
 

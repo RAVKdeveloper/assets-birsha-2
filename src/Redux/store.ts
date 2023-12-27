@@ -3,6 +3,7 @@ import { setupListeners } from '@reduxjs/toolkit/query'
 import searchHeader from './Slices/HeaderRedusers/searchHeader'
 import { searchTradingPar } from './Api/searchHeaderApi'
 import { authUserApi } from './Api/Auth/authUserApi'
+import headModals from './Slices/Overview/headModals/headModals'
 
 
 export const store = configureStore({
@@ -10,6 +11,7 @@ export const store = configureStore({
     searchHeader,
     [searchTradingPar.reducerPath]: searchTradingPar.reducer,
     [authUserApi.reducerPath]: authUserApi.reducer,
+    headModals,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat( searchTradingPar.middleware, authUserApi.middleware)
 })

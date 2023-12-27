@@ -29,7 +29,7 @@ const FormLogin: FC = () => {
     const addLoginUser = async (data: FormData) => {
         try{
             const { token } = await loginUser(data).unwrap()
-            localStorage.setItem('tokenAuth', token)
+            await localStorage.setItem('tokenAuth', token)
             navigate('/')
         } catch {
             alert('Не удалось авторизоваться')

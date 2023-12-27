@@ -9,7 +9,7 @@ import { IoSearch } from "react-icons/io5";
 import { FaRegBell } from "react-icons/fa";
 import { IoIosCloseCircle } from "react-icons/io";
 import { useAppDispatch, useAppSelector } from '../../Redux/Slices/hooks/hooks';
-import { useAuthMeQuery } from '../../Redux/Api/Auth/authUserApi';
+import { useAuthMeQuery, useLazyAuthMeQuery } from '../../Redux/Api/Auth/authUserApi';
 import { setSearchVal } from '../../Redux/Slices/HeaderRedusers/searchHeader';
 import AccountHoverHeader from './AccountHover/accHover';
 import DowloandModalHeader from './DowloandModal/dowloand';

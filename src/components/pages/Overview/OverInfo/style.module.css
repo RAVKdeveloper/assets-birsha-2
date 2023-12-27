@@ -1,0 +1,84 @@
+.root{
+    padding: 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.balanceColumn{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.title{
+    font-size: 20px;
+    color: var(--noactive-color);
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.eye{
+    font-size: 17px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.balance{
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--colortext-main);
+}
+
+.balance span{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.balanceBtc{
+ font-size: 14px;
+ color: var(--noactive-color);   
+}
+
+
+.btnRow{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.btnOrange{
+    padding: 13px 16px;
+    background: var(--color-accent);
+    color: var(--colortext-main);
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 15px;
+    user-select: none;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.btnOrange:hover{
+    background: #ffc35c;
+    transition: all .3s ease;
+}
+
+.btnTransperant{
+    padding: 12px 15px;
+    border: 1px solid rgba(153, 153, 153, 0.5);
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 15px;
+    cursor: pointer;
+    user-select: none;
+    transition: all .3s ease;
+}
+
+.btnTransperant:hover{
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+    transition: all .3s ease;
+}
