@@ -3,17 +3,26 @@ import { setupListeners } from '@reduxjs/toolkit/query'
 import searchHeader from './Slices/HeaderRedusers/searchHeader'
 import { searchTradingPar } from './Api/searchHeaderApi'
 import { authUserApi } from './Api/Auth/authUserApi'
+import { createAssetsApi } from './Api/Auth/createAssetsApi'
+import { globalAssetsApi } from './Api/GlobalAssetsApi/globalAssetsApi'
 import headModals from './Slices/Overview/headModals/headModals'
 
 
 export const store = configureStore({
   reducer: {
-    searchHeader,
     [searchTradingPar.reducerPath]: searchTradingPar.reducer,
     [authUserApi.reducerPath]: authUserApi.reducer,
+    [createAssetsApi.reducerPath]: createAssetsApi.reducer,
+    [globalAssetsApi.reducerPath]: globalAssetsApi.reducer,
+    searchHeader,
     headModals,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat( searchTradingPar.middleware, authUserApi.middleware)
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat( 
+    searchTradingPar.middleware, 
+    authUserApi.middleware, 
+    createAssetsApi.middleware,
+    globalAssetsApi.middleware,
+    )
 })
 
 export type RootState = ReturnType<typeof store.getState>

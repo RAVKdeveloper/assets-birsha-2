@@ -19,3 +19,9 @@ export type UserTypeMain = {
     updatedAt: string
     token: string
 }
+
+
+export interface SpotAsset {
+    balance: string
+    userId: string
+}

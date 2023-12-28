@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { CgArrowsExchangeAlt } from "react-icons/cg";
 import { SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
 import { useRegistrationMutation } from '../../../../../Redux/Api/Auth/authUserApi';
+import { useCreateSpotMutation } from '../../../../../Redux/Api/Auth/createAssetsApi';
 import style from './style.module.css'
 import { useLocaleStorage } from '../../../../../utils/localstorageHook';
 
@@ -15,6 +16,7 @@ interface FormData {
 const FormRegistration: FC = () => {
 
     const [ regUser, { isError, isLoading } ] = useRegistrationMutation()
+    const [ createAssets ] = useCreateSpotMutation()
     const [ isCheck, setIsCheck ] = useState<boolean>(false)
     const {
         register,
@@ -36,6 +38,10 @@ const FormRegistration: FC = () => {
         return setIsCheck(true)
     }
 
+    const addAssets = async (token: string) => {
+        await createAssets(token).unwrap()
+    } 
+
     const addUserAsync = async (data: FormData) => {
         try{
             const obj = {
@@ -47,6 +53,7 @@ const FormRegistration: FC = () => {
     
           const result = await regUser(obj).unwrap()
           localStorage.setItem('tokenAuth', result.token)
+          addAssets(result.token)
           navigate('/')
         } catch (e) {
             alert('Не удалось зарегистрироваться')
