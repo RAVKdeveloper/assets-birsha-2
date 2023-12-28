@@ -64,3 +64,35 @@
     opacity: 1;
     transition: all .3s ease;
 }
+
+.content{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.tabs{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.tab{
+    height: 32px;
+    font-size: 12px;
+    font-weight: 600;
+    user-select: none;
+    cursor: pointer;
+    color: var(--noactive-color);
+    border-bottom: 2px solid transparent;
+
+    display: flex;
+    align-items: center;
+    transition: all .3s ease;
+}
+
+.tab.active{
+    color: inherit;
+    border-color: var(--links-color);
+    transition: all .3s ease;
+}

@@ -4,7 +4,7 @@ import { LuEyeOff } from "react-icons/lu"
 import OverviewBalanceMainLoader from './Skeletons/Skeleton'
 import style from './style.module.css'
 import DepositModal from './DepositModal/modal'
-import { setOpenDepositModal, setVisibleBalance } from '../../../../Redux/Slices/Overview/headModals/headModals'
+import { setOpenDepositModal, setVisibleBalance, setWithdrawModal } from '../../../../Redux/Slices/Overview/headModals/headModals'
 import { useAppDispatch, useAppSelector } from '../../../../Redux/Slices/hooks/hooks'
 import { useGetOverviewQuery } from '../../../../Redux/Api/GlobalAssetsApi/globalAssetsApi'
 import { useLocaleStorage } from '../../../../utils/localstorageHook'
@@ -18,10 +18,10 @@ const OverInfoOverwiev: FC = () => {
     const { isVisibleBalance } = useAppSelector(state => state.headModals)
     const dispatch = useAppDispatch()
 
-
     if(isError) alert('Произошла ошибка, повторите позже')
     
     const openModalDeposit = () => dispatch(setOpenDepositModal(true))
+    const openWithdrawModal = () => dispatch(setWithdrawModal(true))
 
     const addOpenEyeBalance = () => {
         if(isVisibleBalance) return dispatch(setVisibleBalance(false))
@@ -53,7 +53,7 @@ const OverInfoOverwiev: FC = () => {
             </div>
             <div className={style.btnRow}>
                 <div onClick={openModalDeposit} className={style.btnOrange}>Deposit</div>
-                <div className={style.btnTransperant}>Withdraw</div>
+                <div onClick={openWithdrawModal} className={style.btnTransperant}>Withdraw</div>
                 <div className={style.btnTransperant}>Transfer</div>
                 <div className={style.btnTransperant}>Convert</div>
             </div>

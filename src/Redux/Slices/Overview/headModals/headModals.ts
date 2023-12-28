@@ -3,11 +3,13 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 interface Iinitialstate {
     isVisibleBalance: boolean
     openDepositModal: boolean
+    openWithdrawModal: boolean
 }
 
 const initialState: Iinitialstate = {
     isVisibleBalance: true,
-    openDepositModal: false
+    openDepositModal: false,
+    openWithdrawModal: false,
 }
 
 
@@ -20,11 +22,14 @@ export const headModalsOverview = createSlice({
         },
         setVisibleBalance: (state, action: PayloadAction<boolean>) => {
              state.isVisibleBalance = action.payload
+        },
+        setWithdrawModal: (state, action: PayloadAction<boolean>) => {
+             state.openWithdrawModal = action.payload
         }
     }
 })
 
 
-export const { setOpenDepositModal, setVisibleBalance } = headModalsOverview.actions
+export const { setOpenDepositModal, setVisibleBalance, setWithdrawModal } = headModalsOverview.actions
 
 export default headModalsOverview.reducer
