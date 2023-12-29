@@ -1,0 +1,76 @@
+.root{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 52px;
+
+    overflow-y: scroll;
+    max-height: 200px;
+    z-index: 500;
+
+    display: flex;
+    flex-direction: column;
+    background: var(--back-white);
+    border-radius: 4px;
+    box-shadow: 0 0 4px 3px rgba(0, 0, 0, 0.1);
+
+    pointer-events: none;
+    opacity: 0;
+    transition: all .3s ease;
+}
+
+.root::-webkit-scrollbar{
+    width: 0;
+}
+
+.root.active{
+    pointer-events: all;
+    opacity: 1;
+    transition: all .3s ease;
+}
+
+
+.card{
+    height: 64px;
+    width: 100%;
+    padding: 20px 12px;
+    user-select: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all .3s ease;
+}
+
+.card.active{
+    background: rgba(135, 135, 135, 0.2);
+}
+
+.card:hover{
+    background: rgba(135, 135, 135, 0.2);
+    transition: all .3s ease;
+}
+
+.icon{
+    max-width: 20px;
+    max-height: 20px  ;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.abriature{
+   font-weight: 600;
+}
+
+.abriature.active{
+    color: var(--color-accent);
+}
+
+.name{
+   color: var(--noactive-color);
+}

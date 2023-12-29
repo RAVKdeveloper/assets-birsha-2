@@ -5,6 +5,7 @@ import { searchTradingPar } from './Api/searchHeaderApi'
 import { authUserApi } from './Api/Auth/authUserApi'
 import { createAssetsApi } from './Api/Auth/createAssetsApi'
 import { globalAssetsApi } from './Api/GlobalAssetsApi/globalAssetsApi'
+import { withdrawApi } from './Api/WithdrawModal/withdraw'
 import headModals from './Slices/Overview/headModals/headModals'
 import withdrawModal from './Slices/Overview/WithdrawModal/withdrawModal'
 
@@ -15,6 +16,7 @@ export const store = configureStore({
     [authUserApi.reducerPath]: authUserApi.reducer,
     [createAssetsApi.reducerPath]: createAssetsApi.reducer,
     [globalAssetsApi.reducerPath]: globalAssetsApi.reducer,
+    [withdrawApi.reducerPath]: withdrawApi.reducer,
     searchHeader,
     headModals,
     withdrawModal,
@@ -24,6 +26,7 @@ export const store = configureStore({
     authUserApi.middleware, 
     createAssetsApi.middleware,
     globalAssetsApi.middleware,
+    withdrawApi.middleware,
     )
 })
 

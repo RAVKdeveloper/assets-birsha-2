@@ -10,8 +10,16 @@
     align-items: center;
     justify-content: center;
     z-index: 1000;
+    pointer-events: none;
+    opacity: 0;
+    transition: all .3s ease;
 }
 
+.root.visible{
+    pointer-events: all;
+    opacity: 1;
+    transition: all .3s ease;
+}
 
 .modal{
    background: var(--back-white);
@@ -75,6 +83,8 @@
     display: flex;
     align-items: center;
     gap: 24px;
+
+    margin-bottom: 16px;
 }
 
 .tab{

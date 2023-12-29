@@ -1,0 +1,46 @@
+.root{
+    padding-top: 16px;
+    position: relative;
+}
+
+.title{
+    font-size: 12px;
+    color: var(--noactive-color);
+    padding-bottom: 4px;
+}
+
+.select{
+    border-radius: 4px;
+    border: 1px solid #ededed;
+    padding: 7px 12px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    cursor: pointer;
+    user-select: none;
+    transition: all .3s ease;
+}
+
+.select.active{
+    border-color: var(--color-accent);
+    transition: all .3s ease;
+}
+
+.select:hover{
+    border-color: var(--color-accent);
+    transition: all .3s ease;
+}
+
+.arrow{
+    width: 10px;
+    height: 10px;
+    transition: all .3s ease;
+}
+
+.arrow.active{
+    transform: rotate(180deg);
+    transition: all .3s ease;
+}

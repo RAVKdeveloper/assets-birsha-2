@@ -3,6 +3,8 @@ import style from './style.module.css'
 import { IoMdClose } from "react-icons/io";
 import { useAppDispatch, useAppSelector } from '../../../../../Redux/Slices/hooks/hooks';  
 import { setActionTab, withdrawSelector } from '../../../../../Redux/Slices/Overview/WithdrawModal/withdrawModal';
+import { setWithdrawModal } from '../../../../../Redux/Slices/Overview/headModals/headModals';
+import FormWithdrawModal from './Form/Form';
 
 
 const WithdrawModal: React.FC = () => {
@@ -24,15 +26,17 @@ const WithdrawModal: React.FC = () => {
         }
     ]
 
+    const closeModal = () => dispatch(setWithdrawModal(false))
+
     return (
 
-        <section className={style.root}>
+        <section className={openWithdrawModal ? `${style.root} ${style.visible}` : style.root}>
             <div className={style.modal}>
                 <div className={style.titleRow}>
                     <h5 className={style.title}>Withdraw</h5>
                     <div className={style.rightRowTitle}>
                         <div className={style.fiatWithdraw}>Fiat Withdrawal</div>
-                        <IoMdClose className={style.close} />
+                        <IoMdClose onClick={closeModal} className={style.close} />
                     </div>
                 </div>
                 <div className={style.content}>
@@ -44,6 +48,7 @@ const WithdrawModal: React.FC = () => {
                                 ))
                             }
                         </div>
+                        <FormWithdrawModal/>
                     </div>
                     Element
                 </div>

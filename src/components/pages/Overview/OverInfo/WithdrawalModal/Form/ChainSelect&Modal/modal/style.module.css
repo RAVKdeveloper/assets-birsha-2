@@ -1,0 +1,49 @@
+.root{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 72px;
+
+    overflow-y: scroll;
+    max-height: 140px;
+    
+    display: flex;
+    flex-direction: column;
+    background: var(--back-white);
+    border-radius: 4px;
+    box-shadow: 0 0 4px 3px rgba(0, 0, 0, 0.1);
+}
+
+.root::-webkit-scrollbar{
+    width: 0;
+}
+
+.card{
+    padding: 0 12px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+    transition: all .3s ease;
+}
+
+.card.active{
+    background: rgba(165, 165, 165, 0.4);
+    transition: all .3s ease;
+}
+
+.card:hover{
+    background: rgba(165, 165, 165, 0.4);
+    transition: all .3s ease;
+}
+.name{
+    color: rgb(74, 74, 74);
+}
+
+.fees{
+    color: var(--noactive-color);
+    opacity: 0.8;
+}
