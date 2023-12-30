@@ -17,11 +17,17 @@
 
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
 
     cursor: pointer;
     user-select: none;
     transition: all .3s ease;
+}
+
+.name{
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--colortext-main);
 }
 
 .select.active{

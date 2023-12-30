@@ -5,6 +5,10 @@ interface ResponesConfigurationAssets {
     message: string
 }
 
+interface IResCoinConfig {
+    message: string
+}
+
 export const createAssetsApi = createApi({
     reducerPath: 'createAssetsApi',
     baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:5000/api/assets' }),
@@ -19,11 +23,22 @@ export const createAssetsApi = createApi({
                }
             }
            }
+        }),
+        createCoinBalance: builder.mutation<Partial<IResCoinConfig>, string>({
+            query: (token) => {
+                return {
+                    url: '/createCoinBalance',
+                    method: 'POST',
+                    headers: {
+                        'Authorization': token
+                    }
+                }
+            }
         })
     })
 })
 
 
-export const { useCreateSpotMutation } = createAssetsApi
+export const { useCreateSpotMutation, useCreateCoinBalanceMutation } = createAssetsApi
 
 export default createAssetsApi.reducer

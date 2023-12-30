@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { CgArrowsExchangeAlt } from "react-icons/cg";
 import { SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
 import { useRegistrationMutation } from '../../../../../Redux/Api/Auth/authUserApi';
-import { useCreateSpotMutation } from '../../../../../Redux/Api/Auth/createAssetsApi';
+import { useCreateSpotMutation, useCreateCoinBalanceMutation } from '../../../../../Redux/Api/Auth/createAssetsApi';
 import style from './style.module.css'
 import { useLocaleStorage } from '../../../../../utils/localstorageHook';
 
@@ -17,6 +17,7 @@ const FormRegistration: FC = () => {
 
     const [ regUser, { isError, isLoading } ] = useRegistrationMutation()
     const [ createAssets ] = useCreateSpotMutation()
+    const [ createCoinBalance ] = useCreateCoinBalanceMutation()
     const [ isCheck, setIsCheck ] = useState<boolean>(false)
     const {
         register,
@@ -54,6 +55,7 @@ const FormRegistration: FC = () => {
           const result = await regUser(obj).unwrap()
           localStorage.setItem('tokenAuth', result.token)
           addAssets(result.token)
+          await createCoinBalance(result.token).unwrap()
           navigate('/')
         } catch (e) {
             alert('Не удалось зарегистрироваться')

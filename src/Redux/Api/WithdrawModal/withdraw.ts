@@ -20,6 +20,42 @@ interface IReqChain {
     coin: string
 }
 
+interface IResBalance {
+    asset: string
+    _id: string
+    balance: string
+    userId: string
+    name: string
+}
+
+interface IReqBalance {
+    token: string
+    asset: string
+    coin: string
+}
+
+interface IReqOrder {
+    coin: string,
+    fee: string
+    address: string
+    type: string
+    amount: string
+    asset: string
+    token: string
+}
+
+interface IResOrder {
+    coin: string,
+    fee: string
+    address: string
+    type: string
+    amount: string
+    asset: string
+    token: string
+    userId: string
+    _id: string
+}
+
 
 export const withdrawApi = createApi({
     reducerPath: 'withdrawApi',
@@ -47,11 +83,41 @@ export const withdrawApi = createApi({
                    body: { coin: obj.coin }
                 }
             }
+        }),
+        getBalance: builder.query<IResBalance, IReqBalance>({
+            query: (obj) => {
+                return {
+                    url: `/${obj.asset}/${obj.coin}`,
+                    method: 'GET',
+                    headers: {
+                        'Authorization': obj.token
+                    }
+                }
+            }
+        }),
+        createOrder: builder.mutation<IResOrder, Partial<IReqOrder>>({
+            query: (obj) =>{
+                return {
+                   url: '/order',
+                   method: 'POST',
+                   headers: {
+                    'Authorization': obj.token
+                   },
+                   body: { 
+                       coin: obj.coin,
+                       fee: obj.fee,
+                       address: obj.address,
+                       type: obj.type,
+                       amount: obj.amount,
+                       asset: obj.asset,
+                    }
+                }
+            } 
         })
     })
 })
 
 
-export const { useLazyGetCryptoListQuery, useGetChainListMutation } = withdrawApi
+export const { useLazyGetCryptoListQuery, useGetChainListMutation, useLazyGetBalanceQuery, useCreateOrderMutation } = withdrawApi
 
 export default withdrawApi.reducer
