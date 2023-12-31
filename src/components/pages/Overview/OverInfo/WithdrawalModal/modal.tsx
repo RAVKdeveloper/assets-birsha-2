@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from '../../../../../Redux/Slices/hook
 import { setActionTab, withdrawSelector } from '../../../../../Redux/Slices/Overview/WithdrawModal/withdrawModal';
 import { setWithdrawModal } from '../../../../../Redux/Slices/Overview/headModals/headModals';
 import FormWithdrawModal from './Form/Form';
+import ManageLimitWithdraw from './Element';
 
 
 const WithdrawModal: React.FC = () => {
@@ -50,7 +51,7 @@ const WithdrawModal: React.FC = () => {
                         </div>
                         <FormWithdrawModal/>
                     </div>
-                    Element
+                    <ManageLimitWithdraw/>
                 </div>
             </div>
         </section>

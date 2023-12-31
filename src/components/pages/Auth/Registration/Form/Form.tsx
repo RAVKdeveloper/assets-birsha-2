@@ -85,7 +85,7 @@ const FormRegistration: FC = () => {
                 </NavLink>
             </div>
             <form onSubmit={handleSubmit(submit, error)} className={style.form}>
-                <input type="text" className={inputNick} placeholder='NickName' {...register('nick', { required: 'Invalid NickName', maxLength: 15, minLength: 3 })} />
+                <input type="text" className={inputNick} placeholder='NickName' {...register('nick', { required: 'Invalid NickName', maxLength: 25, minLength: 3 })} />
                 {
                     errors.nick ? <p className={style.errorText}>{errors.nick?.message}</p> : null
                 }

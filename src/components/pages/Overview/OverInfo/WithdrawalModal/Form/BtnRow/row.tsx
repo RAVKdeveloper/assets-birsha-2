@@ -2,24 +2,35 @@ import React from 'react'
 import style from './style.module.css'
 import { useAppSelector } from '../../../../../../../Redux/Slices/hooks/hooks'
 import { withdrawSelector } from '../../../../../../../Redux/Slices/Overview/WithdrawModal/withdrawModal'
-import { useCreateOrderMutation } from '../../../../../../../Redux/Api/WithdrawModal/withdraw'
+import { useCreateOrderMutation, useCreateOrderTwoActionMutation } from '../../../../../../../Redux/Api/WithdrawModal/withdraw'
 
 
 const BtnRowWithdraw: React.FC = () => {
 
-    const { coin, assets, actionTab, address, amount, chain } = useAppSelector(withdrawSelector)
+    const { coin, assets, actionTab, address, amount, chain ,email } = useAppSelector(withdrawSelector)
     const [ submit, setSubmit ] = React.useState<boolean>(false)
+    const [ submitTypeTwo, setSubmitTypeTwo ] = React.useState<boolean>(false)
     const [ addOrder ] = useCreateOrderMutation()
+    const [ addOrderActionTwo ] = useCreateOrderTwoActionMutation()
 
     React.useEffect(() => {
 
-        const isTrue = address !== '' && amount !== '' && chain.name !== ''
-       if(isTrue) {
-          setSubmit(true)
-       } else {
-          setSubmit(false)
-       }
-    }, [coin, assets, actionTab, address, amount, chain])
+        if(actionTab === '0') {
+            const isTrue = address !== '' && amount !== '' && chain.name !== ''
+           if(isTrue) {
+              setSubmit(true)
+           } else {
+              setSubmit(false)
+           }
+        } else if(actionTab === '1') {
+            const isTrue = email !== '' && amount !== ''
+            if(isTrue) {
+                setSubmitTypeTwo(true)
+            } else {
+                setSubmitTypeTwo(false)
+            }
+        }
+    }, [coin, assets, actionTab, address, amount, chain, email])
 
     const fetchOrder = async () => {
         try{
@@ -45,14 +56,16 @@ const BtnRowWithdraw: React.FC = () => {
                 const obj = {
                     type: actionTab,
                     coin: coin.abriatur,
-                    email: '',
+                    email,
                     amount,
                     asset: assets,
                     token
                 }
+
+                await addOrderActionTwo(obj).unwrap()
             }
-        } catch {
-            alert('Недостаточно средств')
+        } catch (e: any) {
+            alert(e.data.message)
         }
     }
 
@@ -61,9 +74,19 @@ const BtnRowWithdraw: React.FC = () => {
         <section className={style.root}>
             <div className={style.feeBody}>
                 <p className={style.title}>Transaction Fee</p>
-                <p className={style.fee}>{chain.fee}</p>
+                {
+                    actionTab === '0' ?
+                    <p className={style.fee}>{chain.fee}</p>
+                    :
+                    <p className={style.fee}>0 {coin.abriatur}</p>
+                }
             </div>
-            <button onClick={fetchOrder} disabled={!submit} className={submit ? style.btn : `${style.btn} ${style.dis}`}>Submit</button>
+            {
+                actionTab === '0' ?
+                <button onClick={fetchOrder} disabled={!submit} className={submit ? style.btn : `${style.btn} ${style.dis}`}>Submit</button>
+                :
+                <button onClick={fetchOrder} disabled={!submitTypeTwo} className={submitTypeTwo ? style.btn : `${style.btn} ${style.dis}`}>Submit</button>
+            }
         </section>
     )
 }

@@ -24,6 +24,6 @@ export const globalAssetsApi = createApi({
 })
 
 
-export const { useGetOverviewQuery } = globalAssetsApi
+export const { useGetOverviewQuery, useLazyGetOverviewQuery } = globalAssetsApi
 
 export default globalAssetsApi.reducer

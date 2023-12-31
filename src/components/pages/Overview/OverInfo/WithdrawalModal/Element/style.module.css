@@ -1,0 +1,33 @@
+.root{
+    width: 290px;
+    height: 502px;
+    border-radius: 4px;
+    border: 1px solid #e9edf2;
+    color: var(--colortext-main);
+    padding: 12px;
+}
+
+.title{
+    font-size: 12px;
+    padding-bottom: 8px;
+}
+
+.value{
+    font-weight: 500;
+    padding-bottom: 11px;
+}
+
+.manageLink{
+    font-size: 12px;
+    color: var(--links-color);
+    user-select: none;
+    cursor: pointer;
+}
+
+.more{
+    margin-top: 20px;
+    font-size: 12px;
+    color: var(--links-color);
+    user-select: none;
+    cursor: pointer;
+}

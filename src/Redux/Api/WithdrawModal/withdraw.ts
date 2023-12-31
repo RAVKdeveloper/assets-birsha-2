@@ -56,6 +56,18 @@ interface IResOrder {
     _id: string
 }
 
+interface IReqActionTwo {
+    type: string
+    coin: string
+    email: string
+    amount: string
+    asset: string
+    token: string
+}
+
+interface IResActionTwo {
+    message: string
+}
 
 export const withdrawApi = createApi({
     reducerPath: 'withdrawApi',
@@ -113,11 +125,29 @@ export const withdrawApi = createApi({
                     }
                 }
             } 
+        }),
+        createOrderTwoAction: builder.mutation<IResActionTwo, Partial<IReqActionTwo>>({
+            query: (obj) => {
+                return {
+                   url: '/order',
+                   method: 'POST',
+                   headers: {
+                    'Authorization': obj.token
+                   },
+                   body: { 
+                       coin: obj.coin,
+                       type: obj.type,
+                       amount: obj.amount,
+                       asset: obj.asset,
+                       email: obj.email
+                    }
+                }
+            }
         })
     })
 })
 
 
-export const { useLazyGetCryptoListQuery, useGetChainListMutation, useLazyGetBalanceQuery, useCreateOrderMutation } = withdrawApi
+export const { useLazyGetCryptoListQuery, useGetChainListMutation, useLazyGetBalanceQuery, useCreateOrderMutation, useCreateOrderTwoActionMutation } = withdrawApi
 
 export default withdrawApi.reducer

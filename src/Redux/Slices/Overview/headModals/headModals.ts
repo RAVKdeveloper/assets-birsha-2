@@ -4,12 +4,14 @@ interface Iinitialstate {
     isVisibleBalance: boolean
     openDepositModal: boolean
     openWithdrawModal: boolean
+    openTransferModal: boolean
 }
 
 const initialState: Iinitialstate = {
     isVisibleBalance: true,
     openDepositModal: false,
     openWithdrawModal: false,
+    openTransferModal: false
 }
 
 
@@ -25,11 +27,14 @@ export const headModalsOverview = createSlice({
         },
         setWithdrawModal: (state, action: PayloadAction<boolean>) => {
              state.openWithdrawModal = action.payload
+        },
+        setOpenTransferModal: (state, action: PayloadAction<boolean>) => {
+             state.openTransferModal = action.payload
         }
     }
 })
 
 
-export const { setOpenDepositModal, setVisibleBalance, setWithdrawModal } = headModalsOverview.actions
+export const { setOpenDepositModal, setVisibleBalance, setWithdrawModal, setOpenTransferModal } = headModalsOverview.actions
 
 export default headModalsOverview.reducer

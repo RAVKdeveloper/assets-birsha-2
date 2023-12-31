@@ -21,6 +21,7 @@ interface IinitialState {
     chain: Chain
     amount: string
     assets: string
+    email: string
 }
 
 const initialState: IinitialState = {
@@ -35,7 +36,8 @@ const initialState: IinitialState = {
     address: '',
     chain: { name: '', fee: '' },
     amount: '',
-    assets: 'Spot'
+    assets: 'Spot',
+    email: ''
 }
 
 export const withdrawModal = createSlice({
@@ -65,6 +67,9 @@ export const withdrawModal = createSlice({
        },
        setAssets: (state, action: PayloadAction<string>) => {
         state.assets = action.payload
+       },
+       setEmail: (state, action: PayloadAction<string>) => {
+        state.email = action.payload
        }
     }
 })
@@ -73,5 +78,5 @@ export const withdrawModal = createSlice({
 export const withdrawSelector = (state: RootState) => state.withdrawModal
 
 
-export const { setActionTab, setCoin, setIsOpen, setAddress, setIsOpenChain, setChain, setAmount, setAssets } = withdrawModal.actions
+export const { setActionTab, setCoin, setIsOpen, setAddress, setIsOpenChain, setChain, setAmount, setAssets, setEmail } = withdrawModal.actions
 export default withdrawModal.reducer
