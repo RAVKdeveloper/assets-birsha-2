@@ -3,3 +3,8 @@
     margin-top: 58px;
     padding-bottom: 83px;
 }
+
+.contentRow{
+    display: flex;
+    align-items: flex-start;
+}

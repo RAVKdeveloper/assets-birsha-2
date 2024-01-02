@@ -5,6 +5,12 @@ interface IBasicResponesGet {
     btc: string
 }
 
+interface IGetAssetReq {
+    asset: string
+    token: string
+}
+
+
 export const globalAssetsApi = createApi({
     reducerPath: 'globalAssetsApi',
     baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:5000/api/assets' }),
@@ -19,11 +25,22 @@ export const globalAssetsApi = createApi({
                 }
             }
           }
+       }),
+       getAsset: builder.query<IBasicResponesGet, IGetAssetReq>({
+        query: (obj) => {
+            return {
+                url: `/${obj.asset}`,
+                method: 'GET',
+                headers: {
+                    'Authorization': obj.token
+                }
+            }
+        }
        })
     })
-})
+})  
 
 
-export const { useGetOverviewQuery, useLazyGetOverviewQuery } = globalAssetsApi
+export const { useGetOverviewQuery, useLazyGetOverviewQuery, useLazyGetAssetQuery } = globalAssetsApi
 
 export default globalAssetsApi.reducer

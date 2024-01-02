@@ -1,0 +1,4 @@
+.root{
+    padding: 24px 32px 24px 24px;
+    border-left: 1px solid var(--back-btn);
+}

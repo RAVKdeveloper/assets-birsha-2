@@ -1,0 +1,144 @@
+.root{
+    padding: 24px 0 48px;
+    width: 833.6px;
+}
+
+.title{
+    padding-left: 32px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--noactive-color);
+    padding-bottom: 4px;
+}
+
+.subtitle{
+    padding-top: 16px;
+    padding-bottom: 4px;
+    padding-left: 32px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--noactive-color);
+}
+
+.card{
+    display: flex;
+    align-items: center;
+    padding: 16px 32px 18px;
+    width: 100%;
+    user-select: none;
+    cursor: pointer;
+    transition: all .3s ease;
+    border-bottom: 1px solid var(--back-btn);
+    height: 78px;
+}
+
+.card:hover{
+    background: var(--back-btn);
+    transition: all .3s ease;
+}
+
+.content{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.asset{
+    width: 232px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.iconAssetBody{
+    background: var(--back-btn);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconAsset{
+    border-radius: 50%;
+    max-width: 17px;
+    max-height: 17px;
+}
+
+.balance{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 60px;
+}
+
+.usd{
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--colortext-main);
+}
+
+.btc{
+    font-size: 12px;
+    color: var(--noactive-color);
+}
+
+.actions{
+    width: 394px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+}
+
+.iconBodyAction{
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    border: 1px solid rgba(128, 128, 128, 0.4);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity .3s ease;
+}
+
+.iconBodyAction:hover{
+    opacity: 0.5;
+    transition: opacity .3s ease;
+}
+
+.iconAction{
+    width: 16px;
+    height: 17px;
+}
+
+.withdrawAction{
+    transform: rotate(-90deg);
+}
+
+
+.LinkBody{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 390px;
+}
+
+.iconLink{
+    max-width: 16px;
+    max-height: 16px;
+}
+
+.nameLink{
+    padding-left: 6px;
+    font-weight: 600;
+}
+
+.procent{
+    color: var(--green-action);
+    font-weight: 600;
+    padding-left: 8px;
+}
