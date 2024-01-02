@@ -1,0 +1,65 @@
+.title{
+    color: var(--noactive-color);
+    padding-bottom: 8px;
+}
+
+.inputBox{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: var(--back-btn);
+    padding: 10px 10px;
+    border-radius: 8px;
+    height: 48px;
+
+    border: 1px solid transparent;
+}
+
+.inputBox.error{
+    border-color: red;
+}
+
+.input{
+    background: transparent;
+    width: 317.9px;
+    height: 21.6px;
+    color: var(--colortext-main);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.btnRow{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btnAll{
+    color: var(--links-color);
+    font-size: 14px;
+    user-select: none;
+    cursor: pointer;
+    line-height: 1px;
+}
+
+.coinName{
+    font-size: 16px;
+    color: var(--colortext-main);
+}
+
+.balanceinfoRow{
+    padding-top: 12px;
+    font-size: 14px;
+    color: var(--noactive-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.error{
+    font-size: 14px;
+    color: red;
+    margin-top: 8px;
+}

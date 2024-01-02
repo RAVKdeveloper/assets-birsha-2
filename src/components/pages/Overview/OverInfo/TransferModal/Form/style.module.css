@@ -1,0 +1,21 @@
+.root{
+    padding: 0 32px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.btn{
+    height: 48px;
+    background: var(--color-accent);
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    width: 100%;
+    user-select: none;
+}
+
+.btn.dis{
+    opacity: 0.5;
+    cursor: not-allowed;
+}

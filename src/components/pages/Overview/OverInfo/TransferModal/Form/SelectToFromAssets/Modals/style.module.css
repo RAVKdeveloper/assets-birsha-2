@@ -1,0 +1,56 @@
+.root{
+    position: absolute;
+    top: 72px;
+    left: 0;
+
+    z-index: 100;
+
+    background: var(--back-white);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+    min-width: 202px;
+    padding-bottom: 5px;
+
+    pointer-events: none;
+    opacity: 0;
+    transition: all .3s ease;
+}
+
+.root.active{
+    pointer-events: all;
+    opacity: 1;
+    transition: all .3s ease;
+}
+
+.card{
+    padding: 8px 8px 8px 16px;
+    cursor: pointer;
+    user-select: none;
+    transition: all .3s ease;
+}
+
+.card:hover{
+    background: var(--back-main);
+    transition: all .3s ease;
+}
+
+.card.active{
+   background: var(--back-main); 
+}
+
+.card.active .name{
+    color: var(--links-color);
+}
+
+.name{
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--colortext-main);
+    line-height: 22px;
+}
+
+.fee{
+    margin-top: 6px;
+    color: var(--noactive-color);
+    font-size: 12px;  
+}
