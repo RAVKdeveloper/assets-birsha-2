@@ -1,0 +1,106 @@
+.root{
+    padding: 24px 32px;
+    border: 1px solid var(--back-btn);
+}
+
+.titleRow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    margin-bottom: 24px;
+}
+
+.title{
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--colortext-main);
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.eye{
+    color: var(--noactive-color);
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.btnRow{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.btnAccent{
+    padding: 7px 12px;
+    background: var(--color-accent);
+    height: 32px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 13px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.btnAccent:hover{
+    background: #ffc35c;
+    transition: all .3s ease;
+}
+
+.btn{
+    padding: 6px 11px;
+    height: 32px;
+    background: transparent;
+    border: 1px solid rgba(153, 153, 153, 0.5);
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    transition: all .3s ease;
+}
+
+.btn:hover{
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    transition: all .3s ease;
+}
+
+.titleColumn{
+    color: var(--noactive-color);
+    font-weight: 500;
+    border-bottom: 1px dotted var(--noactive-color);
+}
+
+
+.usdBalance{
+    margin: 14px 0 10px;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--colortext-main);
+}
+
+.usdBalance span{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+.btcBalance{
+    font-size: 14px;
+    color: var(--noactive-color);
+}

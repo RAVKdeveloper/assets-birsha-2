@@ -1,5 +1,6 @@
 import LoginPage from "../components/pages/Auth/Login/Login"
 import RegistrationPage from "../components/pages/Auth/Registration/Registration"
+import FundingPage from "../components/pages/Funding/Funding"
 import Overview from "../components/pages/Overview/Overview"
 
 export const routes = [
@@ -17,5 +18,10 @@ export const routes = [
         id: 3,
         route: '/login',
         Component: LoginPage,
+    },
+    {
+        id: 4,
+        route: '/funding',
+        Component: FundingPage
     }
 ]

@@ -57,8 +57,8 @@ const OverInfoOverwiev: FC = () => {
                 {
                     !isLoading ? 
                     <>
-                     <p className={style.balance}>{isVisibleBalance ? data?.balance : '***'} <span>USD</span></p>
-                     <p className={style.balanceBtc}>= {isVisibleBalance ? data?.btc : '***'} <span>BTC</span></p>   
+                     <p className={style.balance}>{isVisibleBalance ? Number(data?.balance).toFixed(2) : '***'} <span>USD</span></p>
+                     <p className={style.balanceBtc}>= {isVisibleBalance ? Number(data?.btc).toFixed(6) : '***'} <span>BTC</span></p>   
                     </>
                     :
                     <OverviewBalanceMainLoader/>

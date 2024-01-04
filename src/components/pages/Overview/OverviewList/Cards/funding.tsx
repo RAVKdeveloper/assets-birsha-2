@@ -38,6 +38,12 @@ const FundingCard: React.FC<Props> = ({ isOpens, isVisible })  => {
        if(token) fetchAsset(token, 'Funding')
     }, [])
 
+    const numusd = Number(data?.balance)
+    const numbtc = Number(data?.btc)
+
+    const USDBalance = isVisible ? numusd.toFixed(2) : '***'
+    const BTCBalance = isVisible ? numbtc.toFixed(3) : '***'
+
     return (
 
         <article className={style.card}>
@@ -48,8 +54,8 @@ const FundingCard: React.FC<Props> = ({ isOpens, isVisible })  => {
             <p className={style.asset}>Funding</p>
         </div>
         <div className={style.balance}>
-            <p className={style.usd}>{isVisible ? data?.balance : '***'} USD</p>
-            <p className={style.btc}>= {isVisible ? data?.btc : '***'} BTC</p>
+            <p className={style.usd}>{USDBalance} USD</p>
+            <p className={style.btc}>= {BTCBalance} BTC</p>
         </div>
         <div className={style.actions}>
             <div onClick={isOpens.deposit} className={style.iconBodyAction}>

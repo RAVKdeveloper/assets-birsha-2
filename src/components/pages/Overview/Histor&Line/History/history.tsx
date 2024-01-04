@@ -56,6 +56,6 @@ const HistoryOrdersOverview: React.FC = () => {
             </div>
         </section>
     )
-}
+} 
 
 export default HistoryOrdersOverview
