@@ -1,4 +1,44 @@
 .root{
     padding: 24px 32px 24px 24px;
     border-left: 1px solid var(--back-btn);
+    border-bottom: 1px solid var(--back-btn);
+    width: 100%;
+}
+
+.tabsRow{
+    width: 203px;
+    height: 32px;
+    padding: 0 4px;
+    border-radius: 6px;
+    background: var(--back-btn);
+    margin-bottom: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tab{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    font-size: 12px;
+
+    width: 65px;
+    height: 24px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.tab.active{
+    background: var(--back-white);
+    box-shadow: 0 0 4px rgba(18,18,20,.1)
+}
+
+
+.lastUpdated{
+    font-size: 12px;
+    margin-top: 16px;
+    color: var(--noactive-color);
 }

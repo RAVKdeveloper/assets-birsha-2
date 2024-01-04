@@ -42,6 +42,7 @@ interface IReqOrder {
     amount: string
     asset: string
     token: string
+    chain: string
 }
 
 interface IResOrder {
@@ -68,6 +69,26 @@ interface IReqActionTwo {
 interface IResActionTwo {
     message: string
 }
+
+interface IGetOrders {
+    coin: string
+    chain: string
+    fee: string
+    address: string
+    type: string
+    amount: string
+    asset: string
+    userId: string
+    action: string
+    date: string
+    _id: string
+}
+
+interface IGetreq {
+     token: string
+     type: string
+}
+
 
 export const withdrawApi = createApi({
     reducerPath: 'withdrawApi',
@@ -122,6 +143,7 @@ export const withdrawApi = createApi({
                        type: obj.type,
                        amount: obj.amount,
                        asset: obj.asset,
+                       chain: obj.chain
                     }
                 }
             } 
@@ -143,11 +165,29 @@ export const withdrawApi = createApi({
                     }
                 }
             }
+        }),
+        getOrders: builder.query<IGetOrders[], IGetreq>({
+            query: obj => {
+                return {
+                    url: `/orders/${obj.type}`,
+                    method: 'GET',
+                    headers: {
+                        'Authorization': obj.token
+                    }
+                }
+            }
         })
     })
 })
 
 
-export const { useLazyGetCryptoListQuery, useGetChainListMutation, useLazyGetBalanceQuery, useCreateOrderMutation, useCreateOrderTwoActionMutation } = withdrawApi
+export const { 
+    useLazyGetCryptoListQuery, 
+    useGetChainListMutation, 
+    useLazyGetBalanceQuery, 
+    useCreateOrderMutation, 
+    useCreateOrderTwoActionMutation,
+    useLazyGetOrdersQuery 
+   } = withdrawApi
 
 export default withdrawApi.reducer

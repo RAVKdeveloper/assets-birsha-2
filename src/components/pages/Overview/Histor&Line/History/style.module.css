@@ -1,0 +1,85 @@
+.root{
+    padding: 24px 32px 24px 24px;
+    border-left: 1px solid var(--back-btn);
+}
+
+.titleRow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.title{
+    border-left: 2px solid #f7a600;
+    padding-left: 12px;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--colortext-main);
+}
+
+.linkAll{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    color: var(--links-color);
+    font-weight: 600;
+
+    cursor: pointer;
+    user-select: none;
+}
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-top: 24px;
+}
+
+.card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.action{
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--colortext-main);
+}
+
+.date{
+    font-size: 12px;
+    color: var(--noactive-color);
+    line-height: 18px;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.value{
+    color: var(--green-action);
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.value.minus{
+    color: red;
+}
+
+.status{
+    font-size: 12px;
+    color: var(--noactive-color);
+}

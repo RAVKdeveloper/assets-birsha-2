@@ -10,6 +10,18 @@ interface IGetAssetReq {
     token: string
 }
 
+interface IResAnalitics {
+    _id: string
+    date: string
+    balance: string
+    userId: string
+}
+
+interface IgetReqAnalitics {
+    token: string
+    action: string
+}
+
 
 export const globalAssetsApi = createApi({
     reducerPath: 'globalAssetsApi',
@@ -36,11 +48,33 @@ export const globalAssetsApi = createApi({
                 }
             }
         }
+       }),
+       createAnalitics: builder.mutation<Partial<IResAnalitics>, string>({
+        query: (token) => {
+            return {
+                url: '/create/analitics',
+                method: 'POST',
+                headers: {
+                    'Authorization': token
+                },
+            }
+        }
+       }),
+       getAnalitics: builder.query<IResAnalitics[], IgetReqAnalitics>({
+        query: (obj) => {
+            return {
+                url: `me/analitics/${obj.action}`,
+                method: 'GET',
+                headers: {
+                    'Authorization': obj.token
+                }
+            }
+        }
        })
     })
 })  
 
 
-export const { useGetOverviewQuery, useLazyGetOverviewQuery, useLazyGetAssetQuery } = globalAssetsApi
+export const { useGetOverviewQuery, useLazyGetOverviewQuery, useLazyGetAssetQuery, useCreateAnaliticsMutation, useLazyGetAnaliticsQuery } = globalAssetsApi
 
 export default globalAssetsApi.reducer
