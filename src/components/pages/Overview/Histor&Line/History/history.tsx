@@ -40,6 +40,7 @@ const HistoryOrdersOverview: React.FC = () => {
             <div className={style.container}>
                 {
                     !isLoading && data &&
+                    data.length > 0 && data[0] !== null ?
                     data.map(({ date, _id, coin, amount, action }) => (
                 <article key={_id} className={style.card}>
                     <div className={style.content}>
@@ -52,6 +53,8 @@ const HistoryOrdersOverview: React.FC = () => {
                     </div>
                 </article>
                     )) 
+                    :
+                    <div>empty</div>
                 }
             </div>
         </section>

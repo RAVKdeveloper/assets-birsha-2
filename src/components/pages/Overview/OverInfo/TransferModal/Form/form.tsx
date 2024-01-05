@@ -31,6 +31,8 @@ const FormTransferModal: React.FC = () => {
     
                 await reqCreate(obj).unwrap()
 
+                alert('Transfer Complete!!!')
+
             } catch (e: any) {
                 alert(e.data.message)
             }

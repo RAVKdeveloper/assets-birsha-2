@@ -1,6 +1,8 @@
 import React from 'react'
 import style from './style.module.css'
 import { CiSearch } from "react-icons/ci";
+import { FaArrowRight } from "react-icons/fa6";
+import iconCard from '../../../../assets/img/Funding/BannerCardSearching.svg'
 import { useAppDispatch, useAppSelector } from '../../../../Redux/Slices/hooks/hooks';
 import { fundingSortingSelector, setIsHiddenNullBalance, setSearchValue } from '../../../../Redux/Slices/Funding/FundingSorting';
 import debounce from 'lodash.debounce'
@@ -43,7 +45,11 @@ const FundingFilter: React.FC = () => {
                </div>
             </div>
             <article className={style.card}>
-                helo
+                <img src={iconCard} alt="usdtBanner" className={style.iconCard} />
+                <div className={style.columnCard}>
+                    <p className={style.titleCard}>Automatically earn yield on idle assets</p>
+                    <p className={style.link}>Enable Now < FaArrowRight className={style.arrow} /></p>
+                </div>
             </article>
         </section>
     )

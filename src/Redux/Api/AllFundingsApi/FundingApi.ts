@@ -6,6 +6,22 @@ interface IReqFunding {
     btc: string
 }
 
+interface IReqCoins {
+    token: string
+    search: string
+}
+
+interface IResCoins {
+    _id: string
+    name: string
+    fullname: string
+    asset: string
+    balance: string
+    userId: string
+    img: string
+}
+
+
 
 export const FundingApi = createApi({
     reducerPath: 'FundingApi',
@@ -21,11 +37,22 @@ export const FundingApi = createApi({
                     }
                 }
             }
+        }),
+        getCoins: builder.query<IResCoins[], IReqCoins>({
+            query: (obj) => {
+                return {
+                    url: `/coins/${obj.search ? obj.search : 'AllCoins'}`,
+                    method: 'GET',
+                    headers: {
+                        'Authorization': obj.token
+                    }
+                }
+            }
         })
     })
 })
 
 
-export const { useLazyGetFundingBalanceQuery } = FundingApi
+export const { useLazyGetFundingBalanceQuery, useLazyGetCoinsQuery } = FundingApi
 
 export default FundingApi.reducer

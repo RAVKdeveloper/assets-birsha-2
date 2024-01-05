@@ -97,6 +97,8 @@ const LineBodyOverview: React.FC = () => {
        } else if(Date.parse(yesterday) < finishDate - 86400000) {
              createAnalitics(token)
        }
+    } else if(token) {
+          createAnalitics(token)
     }
     }, [])
 

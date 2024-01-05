@@ -2,6 +2,7 @@ import LoginPage from "../components/pages/Auth/Login/Login"
 import RegistrationPage from "../components/pages/Auth/Registration/Registration"
 import FundingPage from "../components/pages/Funding/Funding"
 import Overview from "../components/pages/Overview/Overview"
+import SpotPage from "../components/pages/Spot/Spot"
 
 export const routes = [
     {
@@ -23,5 +24,10 @@ export const routes = [
         id: 4,
         route: '/funding',
         Component: FundingPage
+    },
+    {
+        id: 5,
+        route: '/spot',
+        Component: SpotPage
     }
 ]

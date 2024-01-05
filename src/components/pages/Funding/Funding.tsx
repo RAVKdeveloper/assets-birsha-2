@@ -6,6 +6,7 @@ import DepositModal from '../Overview/OverInfo/DepositModal/modal'
 import WithdrawModal from '../Overview/OverInfo/WithdrawalModal/modal'
 import TransferModal from '../Overview/OverInfo/TransferModal/modal'
 import FundingFilter from './Filter/FundingFilter'
+import FundingList from './FundingList/FundingList'
 
 
 const FundingPage: React.FC = () => {
@@ -17,6 +18,7 @@ const FundingPage: React.FC = () => {
         <main className={style.root}>
            <FundingHead/>
            <FundingFilter/>
+           <FundingList/>
         </main>
         <DepositModal/>
         <WithdrawModal/>

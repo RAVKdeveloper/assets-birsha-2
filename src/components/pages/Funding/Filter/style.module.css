@@ -3,7 +3,8 @@
     justify-content: space-between;
     align-items: center;
 
-    padding: 16px 32px;
+    padding: 16px 32px 20px;
+    border-bottom: 1px solid var(--back-btn);
 }
 
 .content{
@@ -17,10 +18,17 @@
     align-items: center;
     height: 39px;
     gap: 5px;
+    border: 1px solid transparent;
 
     background: var(--back-btn);
     padding: 10px 12px;
     border-radius: 4px;
+    transition: all .3s ease;
+}
+
+.searchBody:hover{
+    border-color: var(--color-accent);
+    transition: border-color .3s ease;
 }
 
 .searchIcon{
@@ -69,4 +77,43 @@
    display: flex;
    align-items: center;
    justify-content: center;
+}
+
+
+.card{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    background: var(--back-main);
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.iconCard{
+    max-width: 48px;
+    max-height: 48px;
+}
+
+.columnCard{
+    padding-top: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.titleCard{
+    font-weight: 500;
+}
+
+.link{
+    font-size: 12px;
+    color: var(--links-color);
+    cursor: pointer;
+    user-select: none;
+}
+
+.arrow{
+    padding-top: 2px;
+    padding-left: 1px;
 }

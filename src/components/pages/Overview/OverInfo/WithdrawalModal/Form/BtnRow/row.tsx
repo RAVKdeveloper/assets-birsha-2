@@ -52,6 +52,7 @@ const BtnRowWithdraw: React.FC = () => {
                 await addOrder(obj).unwrap()
     
                 setSubmit(false)
+                alert('Withdraw complete')
             } else if(token && actionTab === '1') {
                 const obj = {
                     type: actionTab,
@@ -63,6 +64,8 @@ const BtnRowWithdraw: React.FC = () => {
                 }
 
                 await addOrderActionTwo(obj).unwrap()
+
+                alert('Withdraw complete')
             }
         } catch (e: any) {
             alert(e.data.message)

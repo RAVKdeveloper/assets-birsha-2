@@ -1,0 +1,122 @@
+.root{
+    overflow-y: scroll;
+    height: calc(100vh - 352px);
+}
+
+.root::-webkit-scrollbar{
+    width: 0;
+}
+
+.tableHeadRow{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    background: var(--back-btn);
+    padding: 0 8px;
+    font-size: 12px;
+    color: var(--noactive-color);
+}
+
+.cointitle{
+    width: 122px;
+}
+
+.alltitle{
+    width: 172.7px;
+    padding-left: 8px;
+}
+
+.avaibletitle{
+    width: 172.7px;
+    padding-left: 8px;
+}
+
+.actiontitle{
+    padding-left: 120px;
+}
+
+
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-left: 8px;
+    padding-right: 22px;
+    height: 64px;
+    border-bottom: 1px solid var(--back-btn);
+}
+
+
+.left{
+    display: flex;
+    align-items: center;
+}
+
+.iconAndNameColumn{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 122px;
+}
+
+.icon{
+    max-width: 28px;
+    max-height: 28px;
+}
+
+.colunmn{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+
+.abriatur{
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--colortext-main);
+}
+
+.name{
+    font-size: 12px;
+    color: var(--noactive-color);
+}
+
+
+.balanceColumnAll{
+    padding-left: 8px;
+    width: 172.7px;
+    font-weight: 600; 
+}
+
+.balanceColumn{
+    width: 172.7px;
+    padding-left: 8px;
+}
+
+
+.right{
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    width: 396px;
+    height: 64px;
+    padding-left: 20px;
+    border-left: 1px solid var(--back-btn);
+}
+
+.action{
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--links-color);
+    transition: color .3s ease;
+    user-select: none;
+    cursor: pointer;
+}
+
+.action:hover{
+    color: var(--color-accent);
+    transition: color .3s ease;
+}
