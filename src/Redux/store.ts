@@ -8,10 +8,12 @@ import { globalAssetsApi } from './Api/GlobalAssetsApi/globalAssetsApi'
 import { withdrawApi } from './Api/WithdrawModal/withdraw'
 import { transferApi } from './Api/TransferModal/transfer'
 import { FundingApi } from './Api/AllFundingsApi/FundingApi'
+import { SpotApi } from './Api/AllSpotApi/SpotApi'
 import headModals from './Slices/Overview/headModals/headModals'
 import withdrawModal from './Slices/Overview/WithdrawModal/withdrawModal'
 import transferModal from './Slices/Overview/TransferModal/transferModal'
 import FundingSorting from './Slices/Funding/FundingSorting'
+import SpotSorting from './Slices/Spot/SpotSorting'
 
 
 export const store = configureStore({
@@ -23,11 +25,13 @@ export const store = configureStore({
     [withdrawApi.reducerPath]: withdrawApi.reducer,
     [transferApi.reducerPath]: transferApi.reducer,
     [FundingApi.reducerPath]: FundingApi.reducer,
+    [SpotApi.reducerPath]: SpotApi.reducer,
     searchHeader,
     headModals,
     withdrawModal,
     transferModal,
     FundingSorting,
+    SpotSorting,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat( 
     searchTradingPar.middleware, 
@@ -37,6 +41,7 @@ export const store = configureStore({
     withdrawApi.middleware,
     transferApi.middleware,
     FundingApi.middleware,
+    SpotApi.middleware,
     )
 })
 

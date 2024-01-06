@@ -1,0 +1,144 @@
+.root{
+    padding: 24px 32px;
+    border-bottom: 1px solid var(--back-btn);
+}
+
+.titleRow{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.title{
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--colortext-main);
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.eye{
+    color: var(--noactive-color);
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+
+.btnRow{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.btnActive{
+    padding: 7px 12px;
+    background: var(--color-accent);
+    border-radius: 4px;
+    height: 32px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--colortext-main);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    transition: all .3s ease;
+}
+
+.btnActive:hover{
+    background: #ffc35c;
+    transition: all .3s ease;
+}
+
+.btn{
+     padding: 6px 11px;
+     border-radius: 4px;
+     height: 32px;
+     font-size: 12px;
+     font-weight: 700;
+     color: var(--colortext-main);
+     border: 1px solid rgba(151, 151, 151, 0.4);
+
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     cursor: pointer;
+     user-select: none;
+     transition: all .3s ease;
+}
+
+.btn:hover{
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+.columnRow{
+    padding-top: 24px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    width: 397.6px;
+}
+
+.titleColumn{
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--noactive-color);
+}
+
+.usdValue{
+    margin-top: 14px;
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--colortext-main);
+}
+
+.usdValue span{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.btcValue{
+    font-size: 14px;
+    color: var(--noactive-color);
+}
+
+
+.linkBannerRow{
+    padding-top: 24px;
+    color: var(--colortext-main);
+    font-weight: 700;
+
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+.linkIcon{
+    max-width: 24px;
+    max-height: 24px;
+}
+
+.tetherIcon{
+    max-width: 16px;
+    max-height: 16px;
+}
+
+.procents{
+    color: var(--green-action);
+}

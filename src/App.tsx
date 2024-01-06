@@ -10,11 +10,8 @@ const App: FC = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    if(localStorage.getItem('tokenAuth')) {
-       navigate('/')
-    } else{
-      navigate('/login')
-    }
+    if(!localStorage.getItem('tokenAuth')) navigate('/login')
+    
   }, [localStorage.getItem('tokenAuth')])
 
   return (
