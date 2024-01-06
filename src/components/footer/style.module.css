@@ -1,0 +1,62 @@
+.root{
+    height: 48px;
+    background: var(--blackback);
+    position: sticky;
+    z-index: 1000;
+    padding: 0 24px;
+
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.linkRow{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.link{
+    font-size: 10px;
+    color: var(--header-text);
+    transition: color .3s ease;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.linkEnd{
+    font-size: 10px;
+    color: var(--header-text);
+    transition: color .3s ease;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.linkEnd:hover{
+    color: var(--links-color);
+    transition: color .3s ease;
+}
+
+.link:hover{
+    color: var(--links-color);
+    transition: color .3s ease;
+}
+
+.link::after{
+    content: '';
+    position: absolute;
+    right: -12px;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background: #818181;
+    opacity: 0.5;
+}
+
+
+.copyRaight{
+    color: #71757a;
+    font-size: 10px;
+}

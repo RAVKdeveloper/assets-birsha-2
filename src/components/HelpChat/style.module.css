@@ -1,0 +1,22 @@
+.handlerBtn{
+    position: fixed;
+    bottom: 80px;
+    right: 80px;
+    z-index: 2000;
+
+    width: 44px;
+    height: 44px;
+    background: var(--color-accent);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+.icon{
+    width: 25px;
+    height: 25px;
+}

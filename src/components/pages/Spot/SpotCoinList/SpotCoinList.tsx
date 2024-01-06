@@ -74,7 +74,9 @@ const SpotCoinList: React.FC = () => {
                  </article>   
                 ))
                 :
-                <div className={style.loader}></div>
+            <div className={style.loaderBody}>
+            <div className={style.loader}></div>
+            </div>
             }
         </section>
     )

@@ -121,8 +121,13 @@
     transition: color .3s ease;
 }
 
+.loaderBody{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+}
 
-/* HTML: <div class="loader"></div> */
 .loader {
     width: 50px;
     aspect-ratio: 1;

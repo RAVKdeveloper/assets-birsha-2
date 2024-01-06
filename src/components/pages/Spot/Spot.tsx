@@ -24,7 +24,7 @@ const SpotPage: React.FC = () => {
           </main>
           <DepositModal/>
           <WithdrawModal/>
-          <TransferModal/>
+          <TransferModal/>   
         </>
     )
 }

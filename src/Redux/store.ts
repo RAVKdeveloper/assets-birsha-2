@@ -14,6 +14,7 @@ import withdrawModal from './Slices/Overview/WithdrawModal/withdrawModal'
 import transferModal from './Slices/Overview/TransferModal/transferModal'
 import FundingSorting from './Slices/Funding/FundingSorting'
 import SpotSorting from './Slices/Spot/SpotSorting'
+import Chat from './Slices/Chat/Chat'
 
 
 export const store = configureStore({
@@ -32,6 +33,7 @@ export const store = configureStore({
     transferModal,
     FundingSorting,
     SpotSorting,
+    Chat,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat( 
     searchTradingPar.middleware, 

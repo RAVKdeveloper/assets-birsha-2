@@ -3,6 +3,8 @@ import './styles/global.css';
 import RoutesApp from './routes/routes';
 import Header from './components/header/Header';
 import { useNavigate } from 'react-router-dom';
+import Footer from './components/footer/Footer';
+import HelpChat from './components/HelpChat/HelpChat';
 
 
 const App: FC = () => {
@@ -19,6 +21,8 @@ const App: FC = () => {
     <div className="App">
        <Header/>
        <RoutesApp/>
+       <HelpChat/>
+       <Footer/>
     </div>
   )
 }
