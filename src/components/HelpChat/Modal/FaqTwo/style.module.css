@@ -1,0 +1,32 @@
+.root{
+    margin-top: 20px;
+}
+
+.title{
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--header-text);
+    padding-bottom: 12px;
+}
+
+.content{
+    background: #16171a;
+    border-radius: 8px;
+}
+
+.link{
+    padding: 9px 16px;
+    color: var(--header-text);
+    line-height: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.arrow{
+    opacity: 0.2;
+}

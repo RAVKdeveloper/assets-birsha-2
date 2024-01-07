@@ -1,0 +1,46 @@
+.root{
+    height: 107px;
+    padding: 12px;
+}
+
+.sendBox{
+    position: relative;
+}
+
+.input{
+    width: 100%;
+    padding: 10px 38px 10px 13px;
+    border: 1px solid rgba(0, 0, 0, 0.42);
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 12px 36px 0px;
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.85);
+    line-height: 1.25
+}
+
+.btnSend{
+    position: absolute;
+    right: 10px;
+    top: 4px;
+    border-radius: 50%;
+    background: black;
+    width: 30px;
+    height: 30px;
+    color: var(--header-text);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.cansel{
+    padding: 10px 17px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    cursor: pointer;
+    user-select: none;
+}

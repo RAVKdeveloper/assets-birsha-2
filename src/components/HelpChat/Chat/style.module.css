@@ -1,0 +1,64 @@
+.root{
+    position: fixed;
+    bottom: 80px;
+    right: 50px;
+    z-index: 2000;
+
+    width: 375px;
+    height: 500px;
+    background: #fff;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.titleRow{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 16px;
+    height: 56px;
+}
+
+.logoAndTitle{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo{
+    max-width: 32px;
+    max-height: 32px;
+    border-radius: 50%;
+}
+
+.title{
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--colortext-main);
+}
+
+.closeBody{
+    border-radius: 8px;
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+    user-select: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s ease;
+}
+
+.close{
+    width: 25px;
+    height: 25px;
+    opacity: 0.6;
+}
+
+.closeBody:hover{
+    background: rgba(0, 0, 0, 0.06);
+    transition: all .3s ease;
+}
