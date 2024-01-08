@@ -12,7 +12,7 @@ interface IinitialState {
 const initialState: IinitialState = {
     isOpenModalChat: false,
     openLiveChat: false,
-    sendText: ''
+    sendText: '',
 }
 
 

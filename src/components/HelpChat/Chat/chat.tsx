@@ -4,9 +4,16 @@ import { IoClose } from "react-icons/io5";
 import logo from '../../../assets/img/HelpChat/Chat/logo.svg'
 import ContentChatModal from './Content/content';
 import SendFieldChatModal from './TextField';
+import { setOpenLiveChat } from '../../../Redux/Slices/Chat/Chat';
+import { useAppDispatch } from '../../../Redux/Slices/hooks/hooks';
 
 
 const LiveChat: React.FC = () => {
+
+    const ws = new WebSocket('ws://localhost:8080/')
+    const dispatch = useAppDispatch()
+
+    const closeModal = () => dispatch(setOpenLiveChat(false))
 
     return (
 
@@ -16,12 +23,12 @@ const LiveChat: React.FC = () => {
                     <img src={logo} alt="ravk" className={style.logo} />
                     <span className={style.title}>Bybit Live Chat</span>
                 </div>
-                <div className={style.closeBody}>
+                <div onClick={closeModal} className={style.closeBody}>
                     <IoClose className={style.close} />
                 </div>
             </div>
-            <ContentChatModal/>
-            <SendFieldChatModal/>
+            <ContentChatModal socket={ws} />
+            <SendFieldChatModal socket={ws} />
         </section>
     )
 }

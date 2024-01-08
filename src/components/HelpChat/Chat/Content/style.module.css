@@ -49,7 +49,7 @@
     padding: 0 12px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
 }
 
 .message{
@@ -69,10 +69,25 @@
     background: #f3f3f3;
     max-width: 235px;
     border-radius: 20px;
-    padding: 10px 14px;
-    font-weight: normal;
     line-height: 1.25;
     font-size: 16px;
     word-break: break-word;
     white-space: pre-wrap;
+}
+
+.myMessBody{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.myMess{
+    padding: 10px 14px;
+    max-width: 235px;
+    border-radius: 20px;
+    background: black;
+    line-height: 1.25;
+    font-size: 16px;
+    word-break: break-word;
+    white-space: pre-wrap;
+    color: var(--header-text);
 }

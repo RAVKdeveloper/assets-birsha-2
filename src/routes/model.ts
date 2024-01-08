@@ -1,15 +1,10 @@
-import LoginPage from "../components/pages/Auth/Login/Login"
-import RegistrationPage from "../components/pages/Auth/Registration/Registration"
-import FundingPage from "../components/pages/Funding/Funding"
-import Overview from "../components/pages/Overview/Overview"
-import SpotPage from "../components/pages/Spot/Spot"
+import { lazy } from "react"
+const LoginPage = lazy(() => import('../components/pages/Auth/Login/Login'))
+const RegistrationPage = lazy(() => import('../components/pages/Auth/Registration/Registration'))
+const FundingPage = lazy(() => import('../components/pages/Funding/Funding'))
+const SpotPage = lazy(() => import('../components/pages/Spot/Spot'))
 
 export const routes = [
-    {
-        id: 1,
-        route: '/',
-        Component: Overview,
-    },
     {
         id: 2,
         route: '/registration',
